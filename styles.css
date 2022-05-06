@@ -8,33 +8,63 @@ body {
   font-size: 1.5rem;
 }
 /* hero-nav */
-nav {
-  background-color: #83bd75;
-  height: 3rem;
-  padding: 8px 8px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-transform: capitalize;
-}
+
 h1 {
   text-transform: capitalize;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-.links {
+/* nav section for small screen */
+nav {
+  background-color: #83bd75;
+}
+.nav-header {
   display: flex;
-  width: 40%;
-  justify-content: center;
+  justify-content: space-between;
+  color: white;
+  height: 3rem;
 
   align-items: center;
 }
+.nav-toggle {
+  background-color: transparent;
+  border: 0;
+  font-size: 2.5rem;
+  transition: all 0.3s linear;
+}
+.nav-toggle:hover {
+  transform: rotate(90deg);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.links {
+  /* width: 30%; */
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s linear;
+  /* border-top: 1px solid aliceblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s linear;
+}
+.show-links {
+  /* justify-content: center;
+  align-items: center; */
+  height: 6rem;
+}
 a {
+  background-color: #83bd75;
+
+  /* display: block; */
+  border-radius: 0 0 8px 8px;
   text-decoration: none;
   color: white;
-  width: auto;
-  margin: auto;
-  height: auto;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  line-height: 2rem;
+  font-family: monospace;
+  transition: all 0.5s linear;
 }
 a:hover {
   cursor: pointer;
@@ -45,23 +75,23 @@ a:hover {
 .hero {
   background-color: darkslategrey;
   width: auto;
-  height: 670px;
+  height: 50%;
 }
 .hero-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: auto;
   align-items: center;
-  width: 75%;
+  width: 100%;
 }
 .intro {
-  margin: 120px 20px;
+  margin: 90px 20px;
   color: white;
-  width: 35%;
+  width: 40%;
   padding: 0;
 }
 .intro p {
-  font-size: small;
+  font-size: 15px;
 }
 .intro h3 {
   margin-bottom: 20px;
@@ -71,7 +101,7 @@ a:hover {
   border: 1px solid black;
   border-radius: 7px;
   color: black;
-  margin-top: 3rem;
+  margin-top: 30px;
   font-size: 20px;
   padding: 10px 40px;
 }
@@ -90,15 +120,14 @@ img {
   display: flex;
   margin: auto;
   flex-direction: column;
-  align-content: space-around;
+  align-content: center;
   justify-content: space-evenly;
-  width: 75%;
+  width: 85%;
   height: 500px;
 }
 .pictures {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .about p {
   font-size: 1rem;
@@ -116,6 +145,7 @@ img {
   height: 150px;
   border: 2px solid green;
   border-radius: 10px;
+
   margin-bottom: 1.5rem;
 }
 /* quote */
@@ -183,4 +213,47 @@ img {
 }
 .sub-btn:hover {
   background-color: black;
+}
+
+@media screen and (min-width: 800px) {
+  .hero-container {
+    width: auto;
+    height: 600px;
+  }
+  img {
+    position: relative;
+    margin: auto;
+
+    max-width: 100%;
+    height: 100%;
+  }
+  .hero-tree {
+    position: relative;
+    width: 40%;
+    height: 50%;
+  }
+  nav {
+    background-color: #83bd75;
+    height: 3rem;
+    padding: 8px 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
 }
